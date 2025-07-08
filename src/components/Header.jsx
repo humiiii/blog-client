@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "./Button";
 import BlogList from "./BlogList";
+import Container from "./Container";
 
 const Header = () => {
   return (
-    <div className="relative flex min-h-[40vh] flex-col items-center justify-center overflow-hidden px-4 py-10 text-center sm:py-20">
+    <Container className="relative flex min-h-[40vh] flex-col items-center justify-center overflow-hidden px-4 py-10 text-center sm:py-20">
       <img
         src="./assets/images/gradientBg.png"
         className="pointer-events-none absolute inset-0 -z-10 object-cover opacity-40 select-none"
@@ -28,7 +29,7 @@ const Header = () => {
         <Button type="submit" text="Search" />
       </form>
       <BlogList />
-    </div>
+    </Container>
   );
 };
 

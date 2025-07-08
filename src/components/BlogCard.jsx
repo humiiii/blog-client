@@ -17,7 +17,7 @@ const BlogCard = ({ id, title, description, image, category }) => {
       <div className="flex flex-col gap-2 p-3">
         <Button
           text={category}
-          className={`w-fit text-[8px] tracking-wide uppercase`}
+          className={`w-fit text-xs tracking-wide capitalize`}
         />
         <h5 className="line-clamp-2 text-lg font-bold text-gray-800">
           {title}
