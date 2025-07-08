@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import BlogList from "./BlogList";
 
 const Header = () => {
   return (
@@ -10,8 +11,9 @@ const Header = () => {
         alt="Background gradient"
       />
       <h1 className="relative z-10 mx-auto max-w-3xl text-2xl font-medium text-gray-500 sm:text-6xl sm:leading-[1.15]">
-        Welcome to my blog! <br /> I'm{" "}
-        <span className="text-primary font-semibold">umaidRather</span>
+        I'm <span className="text-primary font-semibold">umaidRather</span>
+        <br />
+        Welcome to my blog!
       </h1>
       <form
         action=""
@@ -25,6 +27,7 @@ const Header = () => {
         />
         <Button type="submit" text="Search" />
       </form>
+      <BlogList />
     </div>
   );
 };
