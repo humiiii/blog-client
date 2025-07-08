@@ -17,6 +17,19 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
+/* Change Text Selection Color */
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #0e2148;
+}
+
+::selection {
+  color: white;
+  background: #0e2148;
+}
+
 @theme {
   --color-primary: #0e2148;
 }

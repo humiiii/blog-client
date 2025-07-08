@@ -1,23 +1,32 @@
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav className="flex items-center justify-between py-5 border-b border-[#E4F1FF]">
+    <nav className="flex items-center justify-between border-b border-[#E4F1FF] py-5">
       <p
         onClick={() => navigate("/")}
-        className="font-medium text-primary text-2xl cursor-pointer"
+        className="hover:text-primary cursor-pointer text-2xl font-medium text-gray-500 transition-colors duration-200 ease-in"
       >
         Dev Diary
       </p>
-      <Button
-        onClick={() => navigate("/admin")}
-        Icon={BsArrowRight}
-        text={"Login"}
-      />
+      <span className="flex items-center gap-2">
+        <Button
+          onClick={() => navigate("/admin")}
+          Icon={FiArrowUpRight}
+          text={"Login"}
+        />
+        <Button
+          onClick={() =>
+            (location.href = "https://humiiii.github.io/portfolio-umaid/")
+          }
+          Icon={FiArrowUpRight}
+          text={"Portfolio"}
+        />
+      </span>
     </nav>
   );
 };
