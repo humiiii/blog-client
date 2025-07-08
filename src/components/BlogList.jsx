@@ -44,6 +44,7 @@ const BlogList = () => {
           )
           .map(({ _id, title, description, category, image }) => (
             <BlogCard
+              key={`blog-${_id}`}
               id={_id}
               title={title}
               description={description}

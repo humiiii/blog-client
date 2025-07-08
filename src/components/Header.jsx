@@ -7,7 +7,7 @@ const Header = () => {
     <div className="relative flex min-h-[40vh] flex-col items-center justify-center overflow-hidden px-4 py-10 text-center sm:py-20">
       <img
         src="./assets/images/gradientBg.png"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40 select-none"
+        className="pointer-events-none absolute inset-0 -z-10 object-cover opacity-40 select-none"
         alt="Background gradient"
       />
       <h1 className="relative z-10 mx-auto max-w-3xl text-2xl font-medium text-gray-500 sm:text-6xl sm:leading-[1.15]">
