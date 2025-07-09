@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { blog_data, comments_data } from "../constants";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { formatDistanceToNow } from "date-fns";
+import Button from "../components/Button";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 const Blog = () => {
   const { id } = useParams();
@@ -61,23 +64,57 @@ const Blog = () => {
           ></div>
         </div>
       </>
-      <>
-        <p className="mx-auto mb-6 max-w-3xl text-lg font-semibold text-gray-700">
-          {dataComments.length} Comments
+
+      <div className="my-8 flex max-w-2xl flex-col rounded-lg p-6">
+        <p className="mb-4 text-base font-semibold text-gray-500/70">
+          Share this article on Social Media
         </p>
-        <div className="mx-auto mt-14 mb-10 max-h-96 max-w-3xl overflow-y-auto">
-          <div className="flex flex-col gap-6">
+        <div className="flex gap-4">
+          <Button Icon={RiInstagramFill} />
+          <Button Icon={FaFacebookF} />
+          <Button Icon={FaTwitter} />
+          <Button Icon={FaLinkedinIn} />
+        </div>
+      </div>
+
+      <>
+        <div className="mx-auto my-10 max-w-3xl rounded-lg bg-white/90 p-6 shadow-md">
+          <p className="mb-4 text-base font-semibold text-gray-700">
+            Add your comment
+          </p>
+          <form className="flex flex-col gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              className="outline-primary focus:ring-primary/20 rounded border border-gray-200 px-4 py-2 text-sm focus:ring-2"
+            />
+            <textarea
+              name="comment"
+              placeholder="Your comment"
+              rows={3}
+              className="outline-primary focus:ring-primary/20 field-sizing-content min-h-[100px] resize-none rounded border border-gray-200 px-4 py-2 text-sm focus:ring-2"
+            />
+            <div className="flex justify-end">
+              <Button text={"Submit"} type="submit" className="px-6" />
+            </div>
+          </form>
+        </div>
+
+        <div className="mx-auto my-10 max-w-3xl rounded-lg bg-white/90 p-6 shadow-md">
+          <p className="mb-6 border-b border-gray-200 pb-4 text-lg font-semibold text-gray-700">
+            {dataComments.length} Comments
+          </p>
+          <div className="flex max-h-[600px] flex-col gap-6 overflow-y-auto pr-2">
             {dataComments.map((comment, index) => (
               <div
-                className="flex items-center gap-4 rounded-lg bg-[#E4F1FF] p-4 shadow-sm transition-shadow hover:shadow-md"
+                className="flex items-start gap-4 rounded-lg border border-gray-100 bg-[#F6F8FA] p-4 shadow-sm transition-shadow hover:shadow-md"
                 key={index}
               >
-                <div className="flex min-w-[40px] flex-col items-center gap-2">
-                  <FaRegCircleUser className="text-primary/70 h-8 w-8" />
-                </div>
                 <div className="flex-1">
-                  <div className="mb-1 flex items-center gap-2">
-                    <p className="text-sm font-semibold text-gray-800">
+                  <div className="mb-1 flex flex-wrap items-center gap-2">
+                    <FaRegCircleUser className="text-primary/70 h-4 w-4" />
+                    <p className="text-base font-semibold text-gray-800">
                       {comment.name}
                     </p>
                     <span className="text-xs text-gray-400">
@@ -88,7 +125,7 @@ const Blog = () => {
                         : ""}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-gray-700">
+                  <p className="rounded border border-gray-100 bg-white px-3 py-2 text-sm leading-relaxed text-gray-700 shadow-inner">
                     {comment.content}
                   </p>
                 </div>

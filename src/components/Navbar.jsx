@@ -19,7 +19,7 @@ const Navbar = () => {
           <Button
             onClick={() => navigate("/admin")}
             Icon={FiArrowUpRight}
-            text={"Login"}
+            text={"Admin"}
           />
           <Button
             onClick={() =>
