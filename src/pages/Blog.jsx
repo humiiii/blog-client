@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { blog_data, comments_data } from "../constants";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { formatDistanceToNow } from "date-fns";
 
 const Blog = () => {
   const { id } = useParams();
@@ -60,7 +62,40 @@ const Blog = () => {
         </div>
       </>
       <>
-        <div className="mx-auto mt-14 mb-10 max-w-3xl">comments</div>
+        <p className="mx-auto mb-6 max-w-3xl text-lg font-semibold text-gray-700">
+          {dataComments.length} Comments
+        </p>
+        <div className="mx-auto mt-14 mb-10 max-h-96 max-w-3xl overflow-y-auto">
+          <div className="flex flex-col gap-6">
+            {dataComments.map((comment, index) => (
+              <div
+                className="flex items-center gap-4 rounded-lg bg-[#E4F1FF] p-4 shadow-sm transition-shadow hover:shadow-md"
+                key={index}
+              >
+                <div className="flex min-w-[40px] flex-col items-center gap-2">
+                  <FaRegCircleUser className="text-primary/70 h-8 w-8" />
+                </div>
+                <div className="flex-1">
+                  <div className="mb-1 flex items-center gap-2">
+                    <p className="text-sm font-semibold text-gray-800">
+                      {comment.name}
+                    </p>
+                    <span className="text-xs text-gray-400">
+                      {comment.createdAt
+                        ? formatDistanceToNow(new Date(comment.createdAt), {
+                            addSuffix: true,
+                          })
+                        : ""}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-gray-700">
+                    {comment.content}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </>
     </div>
   ) : (
