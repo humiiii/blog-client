@@ -1,11 +1,12 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Container from "./Container";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <Container>
       <nav className="flex items-center justify-between border-b border-[#E4F1FF] py-5">
@@ -16,18 +17,25 @@ const Navbar = () => {
           Dev Diary
         </p>
         <span className="flex items-center gap-2">
-          <Button
-            onClick={() => navigate("/admin")}
-            Icon={FiArrowUpRight}
-            text={"Admin"}
-          />
-          <Button
-            onClick={() =>
-              (location.href = "https://humiiii.github.io/portfolio-umaid/")
-            }
-            Icon={FiArrowUpRight}
-            text={"Portfolio"}
-          />
+          {location.pathname.startsWith("/admin") && (
+            <Button Icon={FiArrowUpRight} text={"Logout"} />
+          )}
+          {!location.pathname.startsWith("/admin") && (
+            <>
+              <Button
+                onClick={() => navigate("/admin")}
+                Icon={FiArrowUpRight}
+                text={"Admin"}
+              />
+              <Button
+                onClick={() =>
+                  (location.href = "https://humiiii.github.io/portfolio-umaid/")
+                }
+                Icon={FiArrowUpRight}
+                text={"Portfolio"}
+              />
+            </>
+          )}
         </span>
       </nav>
     </Container>
