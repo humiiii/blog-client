@@ -22,10 +22,15 @@ const BlogCard = ({ id, title, description, image, category }) => {
         <h5 className="line-clamp-2 text-lg font-bold text-gray-800">
           {title}
         </h5>
-        <p className="line-clamp-3 text-sm text-gray-500">
-          {description.slice(0, 80)}
-          {description.length > 80 ? "..." : ""}
-        </p>
+        <p
+          className="prose line-clamp-3 text-xs text-gray-500"
+          dangerouslySetInnerHTML={{
+            __html:
+              description.length > 80
+                ? description.slice(0, 80) + "..."
+                : description,
+          }}
+        ></p>
       </div>
     </div>
   );

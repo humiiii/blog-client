@@ -33,3 +33,76 @@ body {
 @theme {
   --color-primary: #0e2148;
 }
+
+.format-text {
+  font-size: 15px;
+}
+
+.format-text p {
+  margin-bottom: 16px;
+  color: #292929;
+}
+
+.format-text h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #252525 !important;
+  margin: 32px 0;
+}
+
+.format-text h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #252525 !important;
+  margin: 24px 0;
+}
+
+.format-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333 !important;
+  margin: 20px 0;
+}
+
+.format-text h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444444 !important;
+  margin: 16px 0;
+}
+
+.format-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555555 !important;
+  margin: 12px 0;
+}
+
+.format-text h6 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666666 !important;
+  margin: 8px 0;
+}
+
+.format-text strong {
+  font-weight: 700;
+}
+
+.format-text ol {
+  margin-left: 30px;
+  list-style-type: decimal;
+}
+
+.format-text ul {
+  margin-left: 30px;
+  list-style-type: disc;
+}
+
+.format-text li {
+  margin-bottom: 8px;
+}
+
+.format-text a {
+  color: #007aff;
+}
